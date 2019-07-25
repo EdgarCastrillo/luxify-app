@@ -47,10 +47,6 @@ Homepage
 - most viewed adds
 - map of all the houses globally
 
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
 ## ROUTES:
 
 - GET / 
