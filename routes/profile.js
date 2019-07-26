@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
   if (!req.session.currentUser) {
     res.redirect('/auth');
   } else {
-    res.render('index', { title: 'Luxurify' });
+    res.render('profile');
   }
 });
 

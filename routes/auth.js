@@ -8,11 +8,12 @@ const User = require('../models/User.js');
 const saltRounds = 10;
 const router = express.Router();
 
-router.get('/signup', (req, res, next) => {
+router.get('/', (req, res, next) => {
   if (req.session.currentUser) {
-    // res.redirect('/home');
+    res.render('/');
+  } else {
+    res.render('auth');
   }
-  res.render('signup');
 });
 
 router.post('/signup', async (req, res, next) => {
@@ -57,7 +58,8 @@ router.post('/login', async (req, res, next) => {
 });
 
 router.post('/logout', (req, res, next) => {
-
+  delete req.session.currentUser;
+  res.redirect('/');
 });
 
 module.exports = router;
