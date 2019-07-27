@@ -10,6 +10,9 @@ const userSchema = new Schema({
     required: true,
     unique: true
   },
+  surname: {
+    type: String
+  },
   email: {
     type: String,
     required: true,
@@ -18,7 +21,17 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  phone: {
+    type: String
+  },
+  location: {
+    type: String
+  },
+  houses: [{
+    type: ObjectId,
+    ref: 'House'
+  }]
 }, {
   timestamps: true
 });

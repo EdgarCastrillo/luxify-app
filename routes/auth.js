@@ -12,8 +12,31 @@ router.get('/', (req, res, next) => {
   if (req.session.currentUser) {
     res.render('/');
   } else {
-    res.render('auth');
+    res.render('login');
   }
+});
+
+router.post('/login', async (req, res, next) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (bcrypt.compareSync(password, user.password)) {
+      // Save the login in the session!
+      req.session.currentUser = user;
+      res.redirect('/');
+    } else {
+      res.redirect('/auth/login');
+    }
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/signup', (req, res, next) => {
+  if (req.session.currentUser) {
+    // res.redirect('/home');
+  }
+  res.render('signup');
 });
 
 router.post('/signup', async (req, res, next) => {
@@ -29,29 +52,6 @@ router.post('/signup', async (req, res, next) => {
     });
     req.session.currentUser = newUser;
     res.redirect('/');
-  } catch (error) {
-    next(error);
-  }
-});
-
-router.get('/login', (req, res, next) => {
-  if (req.session.currentUser) {
-    // res.redirect('/home');
-  }
-  res.render('login');
-});
-
-router.post('/login', async (req, res, next) => {
-  const { email, password } = req.body;
-  try {
-    const user = await User.findOne({ email });
-    if (bcrypt.compareSync(password, user.password)) {
-      // Save the login in the session!
-      req.session.currentUser = user;
-      res.redirect('/');
-    } else {
-      res.redirect('/auth/login');
-    }
   } catch (error) {
     next(error);
   }

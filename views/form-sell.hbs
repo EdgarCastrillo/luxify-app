@@ -1,0 +1,55 @@
+<main>
+  <section class="form-sell">
+    <form class="" action="/houses/form-sell" method="POST">
+      <label for="title">Title</label>        
+      <input type="text" name="title" id="title"  placeholder="Title">
+      <label for="photos">Photos</label>        
+      <input type="file" name="photos" id="photos"  placeholder="photos">
+      <label for="area">Area</label>        
+      <input type="text" name="area" id="area"  placeholder="area">
+      <input type="text" name="location" id="location"  placeholder="location">
+      <label for="description">Description</label>        
+      <textarea name="description" id="description"  placeholder="description">
+      </textarea>
+      <label for="rooms">Rooms</label>                
+        <select name="rooms" id="rooms">
+          <option value="0"></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </select>
+        <label for="bathrooms">Bathrooms</label>        
+          <select name="bathrooms" id="bathrooms">
+            <option value="0"></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        <label for="swimmingPool">Swimmingpool</label>        
+        <select name="swimmingPool" id="swimmingPool">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <label for="garden">Garden</label> 
+        <select name="garden" id="Garden">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <label for="privateBeach">Private beach</label> 
+        <select name="privateBeach" id="privateBeach">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+          <button type="submit">Publish</button>
+          <button type="submit">Reset</button>
+    </form>
+  </section>
+</main>

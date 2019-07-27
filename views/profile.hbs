@@ -1,9 +1,17 @@
-<h2>{{name}}Profile's</h2>
+<h2>{{user.name}} Profile's</h2>
 
 <img src="" alt="">
-<a href="">Edit profile</a>
-<a href="">My sells</a>
-<a href="">My likes</a>
+<a href="profile/edit">Edit profile</a>
+<a href="profile/sells">My sells</a>
+<a href="profile/save">Saved houses</a>
 <form action="/auth/logout" method="POST">
   <button type="submit">Logout</button>
 </form>
+
+{{#if currentUser}}
+  <p>{{user.name}}</p>
+  <p>{{user.surname}}</p>
+  <p>{{user.email}}</p>
+  <p>{{user.phone}}</p>
+  <p>{{user.location}}</p>
+{{/if}}
