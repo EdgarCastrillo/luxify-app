@@ -41,9 +41,40 @@ router.post('/form-sell', async (req, res, next) => {
 router.get('/sells/:id', async (req, res, next) => {
   try {
     const id = req.params.id;
-    console.log(id);
     const house = await House.findById(id);
     res.render('house-details', house);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/sells/:id/edit', async (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/auth');
+  } else {
+    const id = req.params.id;
+    const house = await House.findById(id);
+    res.render('edit-house', house);
+  }
+});
+
+router.post('/sells/:id/edit', async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const house = req.body;
+    await House.findByIdAndUpdate(id, house);
+    res.redirect('/profile/sells');
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/sells/:id/delete', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    await House.findByIdAndDelete(id);
+    // res.json({ message: 'House deleted' });
+    res.redirect('/profile/sells');
   } catch (error) {
     next(error);
   }
