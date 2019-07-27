@@ -1,21 +1,21 @@
-<h2>House details</h2>
 
 <main>
   <section>  
-    {{#each}} 
     <article>
-      <p>{{title}}</p>
-      <p>{{location}}</p>
+      <h2>{{title}}</h2>
+      <p class="sub-p">{{location}}</p>
       <p>{{description}}</p>
-      <p>{{area}}</p>
-      <p>{{rooms}}</p>
-      <p>{{bathrooms}}</p>
+      <h3>Details</h3>
+      <p>{{area}} m2</p>
+      <p>{{rooms}} rooms</p>
+      <p>{{bathrooms}} bathrooms</p>
       <p>{{garden}}</p>
       <p>{{swimmingPool}}</p>
       <p>{{privateBeach}}</p>
+      <h3>Price</h3>
+      <p>{{price}}</p>
       <button type="submit">contact</button>
     </article>
-    {{/each}}
  
   </section>
 </main>

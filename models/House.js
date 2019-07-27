@@ -58,6 +58,10 @@ const houseSchema = new Schema({
     type: Boolean,
     required: true,
     unique: false
+  },
+  price: {
+    type: String,
+    required: true
   }
 
 }, {

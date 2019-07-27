@@ -14,7 +14,7 @@ router.get('/form-sell', (req, res, next) => {
 });
 
 router.post('/form-sell', async (req, res, next) => {
-  const { photos, title, location, description, area, rooms, bathrooms, garden, swimmingPool, privateBeach } = req.body;
+  const { photos, title, location, description, area, rooms, bathrooms, garden, swimmingPool, privateBeach, price } = req.body;
   try {
     const houses = await House.create({
       photos,
@@ -26,12 +26,24 @@ router.post('/form-sell', async (req, res, next) => {
       bathrooms,
       garden,
       swimmingPool,
-      privateBeach
+      privateBeach,
+      price
     });
     const houseId = houses._id;
     const userId = req.session.currentUser._id;
     await User.findByIdAndUpdate(userId, { $push: { houses: houseId } });
     res.redirect('/profile/sells');
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/sells/:id', async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    console.log(id);
+    const house = await House.findById(id);
+    res.render('house-details', house);
   } catch (error) {
     next(error);
   }
