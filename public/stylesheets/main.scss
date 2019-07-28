@@ -1,16 +1,95 @@
 /* ---- reset ---- */
 
 @import 'scss/components/buttons';
+@import 'scss/components/forms';
+@import 'scss/components/nav';
+@import 'scss/components/card';
 
 
 body {
-  background-color:white;
-
-  main {
-    padding: 25px;
-  }
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  margin: 0;
+  padding: 0;
 
   h2 {
-    font-size: 4em;
+    font-size: 2.2em;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+.container {
+  margin: 0 20px;
+}
+
+.intro {
+  padding: 0px 25px 0px 25px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: url(/images/auth-bkground.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+
+  .auth-home {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      text-decoration: none;
+    }
+  }
+  .log {
+    color: white;
+    font-size: 0.9em;
+    font-weight: 300;
+    a{
+      margin-left: 10px;
+      color: white;
+      font-size: 0.9em;
+      font-weight: 300;
+      text-decoration: none;
+    }
+  }
+  .login{
+    h2{
+      color: white;
+      margin-bottom: 25px;
+    }
   }
 }
+
+
+.home{
+  padding: 30px 25px 70px 25px;
+  p{
+    // margin-bottom: 20px;
+  }
+  }

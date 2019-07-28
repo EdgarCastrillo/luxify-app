@@ -1,22 +1,24 @@
-<h2>Edit profile</h2>
-
-<section>
-    <form class="edit-profile" action="/profile/edit" method="POST">
+<main class="home">
+  <section class="auth-home">
+    <h2>Edit profile</h2>
+    <p>In this section you can edit your profile information</p>
+    <form class="form" action="/profile/edit" method="POST">
       {{!-- <label for="name">Name</label> --}}
-      <input type="text" name="name" id="name"  value="{{user.name}}">
+      <input class="input-black" type="text" name="name" id="name"  value="{{user.name}}">
       {{!-- <label for="surname">Surname</label> --}}
-      <input type="text" name="surname" id="surname"  placeholder="Surname" value="{{user.surname}}">
+      <input class="input-black" type="text" name="surname" id="surname"  placeholder="Surname" value="{{user.surname}}">
       {{!-- <label for="email">Email</label> --}}
-      <input type="text" name="email" id="email"  value="{{user.email}}">
+      <input class="input-black" type="text" name="email" id="email"  value="{{user.email}}">
       {{!-- <label for="phone">Phone</label> --}}
-      <input type="text" name="phone" id="phone"  placeholder="Phone" value="{{user.phone}}">
+      <input class="input-black" type="text" name="phone" id="phone"  placeholder="Phone" value="{{user.phone}}">
       {{!-- <label for="location">Location</label> --}}
-      <input type="location" name="location" id="location"  placeholder="Location" value="{{user.location}}">
-      <button type="submit">Update</button>
+      <input class="input-black" type="location" name="location" id="location"  placeholder="Location" value="{{user.location}}">
+      <button class="btn-black" type="submit">Update</button>
     </form>
-    <form class="delete-action" action="/profile/delete" method="POST">
-      <button class="delete-btn" type="submit">Delete</button>
+    <form class="form" action="/profile/delete" method="POST">
+      <button class="btn-delete" type="submit">Delete</button>
     </form>
 </section>
+</main>
 
   

@@ -1,14 +1,61 @@
 
 
-form {
+.form {
   display: flex;
   flex-direction: column;
 
-    #email {
-      margin-bottom: 14px;
-      border: 1px solid 
-      black;
+   .input-white {
+      margin-bottom: 1em;
+      color: white;
+      background-color: rgba(255, 255, 255, 0);
+      border: 1px solid white;
       border-radius: 8px;
-      height: 35px;
+      height: 50px;
+      padding-left: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      font-weight: 300; 
   }
+  .input-black {
+    margin-bottom: 1em;
+    color: black;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 50px;
+    padding-left: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 300; 
+   
+    
+}
+}
+
+// input[type=text]:focus {
+//   background-color: rgb(241, 241, 241);
+// }
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  resize: none;
+  margin-bottom: 1em;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+select {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-bottom: 1em;
+  border: 1px solid black;
 }

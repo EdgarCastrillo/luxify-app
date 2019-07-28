@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const House = require('../models/House');
+const parser = require('../config/cloudinary');
 
 router.get('/form-sell', (req, res, next) => {
   if (!req.session.currentUser) {
@@ -13,11 +14,12 @@ router.get('/form-sell', (req, res, next) => {
   }
 });
 
-router.post('/form-sell', async (req, res, next) => {
-  const { photos, title, location, description, area, rooms, bathrooms, garden, swimmingPool, privateBeach, price } = req.body;
+router.post('/form-sell', parser.single('image'), async (req, res, next) => {
+  const { title, location, description, area, rooms, bathrooms, garden, swimmingPool, privateBeach, price } = req.body;
+  const imageurl = req.file.secure_url;
   try {
     const houses = await House.create({
-      photos,
+      image: imageurl,
       title,
       location,
       description,

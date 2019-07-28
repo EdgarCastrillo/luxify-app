@@ -1,17 +1,17 @@
-<main>
-  <section class="form-sell">
-    <form class="" action="/houses/form-sell" method="POST">
-      <label for="title">Title</label>        
-      <input type="text" name="title" id="title"  placeholder="Title">
-      <label for="photos">Photos</label>        
-      <input type="file" name="photos" id="photos"  placeholder="photos">
-      <label for="area">Area</label>        
-      <input type="text" name="area" id="area"  placeholder="area">
-      <input type="text" name="location" id="location"  placeholder="location">
-      <label for="description">Description</label>        
-      <textarea name="description" id="description"  placeholder="description">
-      </textarea>
-      <label for="rooms">Rooms</label>                
+<main class="home">
+  <section class="auth-home">
+    <h2>Form sell</h2>
+    <form class="form" action="/houses/form-sell" method="POST" enctype="multipart/form-data">
+      {{!-- <label for="title">Title</label>         --}}
+      <input class="input-black" type="text" name="title" id="title"  placeholder="Title">
+      {{!-- <label for="image">Image</label>         --}}
+      <input class="input-black" type="file" name="image">
+      {{!-- <label for="area">Area</label>         --}}
+      <input class="input-black" type="text" name="area" id="area"  placeholder="area">
+      <input class="input-black" type="text" name="location" id="location"  placeholder="location">
+      {{!-- <label for="description">Description</label>         --}}
+      <textarea name="description" id="description"  placeholder="description"></textarea>
+      {{!-- <label for="rooms">Rooms</label>                 --}}
         <select name="rooms" id="rooms">
           <option value="0"></option>
           <option value="1">1</option>
@@ -22,7 +22,7 @@
           <option value="6">6</option>
           <option value="7">7</option>
         </select>
-        <label for="bathrooms">Bathrooms</label>        
+        {{!-- <label for="bathrooms">Bathrooms</label>         --}}
           <select name="bathrooms" id="bathrooms">
             <option value="0"></option>
             <option value="1">1</option>
@@ -33,25 +33,25 @@
             <option value="6">6</option>
             <option value="7">7</option>
           </select>
-        <label for="swimmingPool">Swimmingpool</label>        
+        {{!-- <label for="swimmingPool">Swimmingpool</label>         --}}
         <select name="swimmingPool" id="swimmingPool">
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
-        <label for="garden">Garden</label> 
+        {{!-- <label for="garden">Garden</label>  --}}
         <select name="garden" id="Garden">
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
-        <label for="privateBeach">Private beach</label> 
+        {{!-- <label for="privateBeach">Private beach</label>  --}}
         <select name="privateBeach" id="privateBeach">
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
-        <label for="price">Price</label>
-        <input type="text" name="price" id="price" placeholder="€">
-          <button type="submit">Publish</button>
-          <button type="submit">Reset</button>
+        {{!-- <label for="price">Price</label> --}}
+        <input class="input-black" type="text" name="price" id="price" placeholder="Price – €">
+          <button class="btn-black" type="submit">Publish</button>
+          <button class="btn-delete" type="submit">Reset</button>
     </form>
   </section>
 </main>

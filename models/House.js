@@ -9,8 +9,8 @@ const houseSchema = new Schema({
     type: ObjectId,
     ref: 'User'
   },
-  Photos: {
-    type: [],
+  image: {
+    type: String,
     required: true
   },
   title: {

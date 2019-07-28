@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{title}}</title>
-    <link rel="stylesheet" href="stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script src="https://kit.fontawesome.com/803a88be75.js"></script>
   </head>
   <body>
     {{{body}}}
+    {{#if currentUser}}
     <nav>
       <ul>
         <li>
-          <img src="" alt="">
-          <a href="/">Explore</a>
+          <a href="/"><i class="fas fa-search"></i></a>
+          <p>Explore</p>
         </li>
         <li>
-          <img src="" alt="">
-          <a href="/profile/save">Save</a>
+          <a href="/profile/save"><i class="far fa-heart"></i></a>
+          <p>Save</p>
         </li>
         <li>
-          <img src="" alt="">
-          <a href="/houses/form-sell">Sell</a>
+          <a href="/houses/form-sell"><i class="far fa-plus-square"></i></a>
+          <p>Sell</p>
         </li>
         <li>
-          <img src="" alt="">
-          <a href="/profile/messages">Messages</a>
+          <a href="/profile/messages"><i class="far fa-comment-dots"></i></a>
+          <p>Messages</p>
         </li>
         <li>
-          <img src="" alt="">
-          <a href="/profile">Profile</a>
+          <a href="/profile"><i class="fas fa-user"></i></a>
+          <p>Profile</p>
         </li>
-        {{!-- <li>
-          <form action="/auth/logout" method="POST">
-            <button type="submit">logout</button>
-          </form>
-        </li> --}}
       </ul>
     </nav>
+    {{/if}}
   </body>
 </html>

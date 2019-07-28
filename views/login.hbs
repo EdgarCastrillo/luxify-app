@@ -1,14 +1,16 @@
-<main class="home">
-  <section class="logo">
-    <a href=""><img src="" alt="">Logo</a>
-  </section>
-
-  <section class="login">
-    <form action="/auth/login" method="POST">
-      <input type="text" name="email" id="email"  placeholder="email">
-      <input type="password" name="password" id="password" required placeholder="password">
-      <button class="btn-white" type="submit">Log in</button>
-      <p>New user?<a href="auth/signup">Join us</a></p>
-    </form>
+<main class="intro">
+  <section class="auth-home">
+    <section class="logo">
+      <a href=""><img src="" alt="">Logo Luxify</a>
+    </section>
+    <section class="login">
+      <h2>Log In</h2>
+      <form class="form" action="/auth/login" method="POST">
+        <input class="input-white" type="text" name="email" id="email"  placeholder="email">
+        <input class="input-white" type="password" name="password" id="password" required placeholder="password">
+        <button class="btn-white" type="submit">Log in</button>
+        <p class="log">New user?<a href="auth/signup">Join us</a></p>
+      </form>
+    </section> 
   </section>
 </main>

@@ -1,12 +1,12 @@
-<main>
-  <section class="form-sell">
-    <form class="" action="/houses/sells/{{_id}}/edit" method="POST">
-      <label for="title">Title</label>        
-      <input type="text" name="title" id="title" value="{{title}}" placeholder="Title">
-      <label for="photos">Photos</label>        
-      <input type="file" name="photos" id="photos" value="{{photos}}" placeholder="photos">
-      <label for="area">Area</label>        
-      <input type="text" name="area" id="area" value="{{area}}" placeholder="area">
+<main class="home">
+  <section class="auth-home">
+    <form class="form" action="/houses/sells/{{_id}}/edit" method="POST">
+      {{!-- <label for="title">Title</label>         --}}
+      <input class="input-black" type="text" name="title" id="title" value="{{title}}" placeholder="Title">
+      {{!-- <label for="photos">Photos</label>         --}}
+      <input class="input-black" type="file" name="photos" id="photos" value="{{photos}}" placeholder="photos">
+      {{!-- <label for="area">Area</label>         --}}
+      <input class="input-black" type="text" name="area" id="area" value="{{area}}" placeholder="area">
       <input type="text" name="location" id="location" value="{{location}}"  placeholder="location">
       <label for="description">Description</label>        
       <textarea name="description" id="description" value="{{description}}" placeholder="description">
@@ -49,11 +49,11 @@
           <option value="no">No</option>
         </select>
         <label for="price">Price</label>
-        <input type="text" name="price" id="price" value="{{price}}" placeholder="€">
+        <input class="btn-black" type="text" name="price" id="price" value="{{price}}" placeholder="€">
           <button type="submit">Update</button> 
     </form>
     <form class="delete-action" action="/houses/sells/{{_id}}/delete" method="POST">
-      <button class="delete-btn" type="submit">Delete</button>
+      <button class="btn-delete" type="submit">Delete</button>
     </form>
   </section>
 </main>
