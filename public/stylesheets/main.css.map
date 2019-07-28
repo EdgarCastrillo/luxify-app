@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAAA,qBAAqB;ACErB,AAAA,UAAU,CAAC;EACT,gBAAgB,EAAE,KAAK;CACxB;;ADCD,AAAA,IAAI,CAAC;EACH,gBAAgB,EAAC,KAAK;CASvB;;AAVD,AAGE,IAHE,CAGF,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;CACd;;AALH,AAOE,IAPE,CAOF,EAAE,CAAC;EACD,SAAS,EAAE,GAAG;CACf",
+    "sources": [
+        "main.scss",
+        "scss/components/_buttons.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
