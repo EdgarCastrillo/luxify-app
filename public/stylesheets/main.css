@@ -305,6 +305,7 @@ nav p {
   color: black;
   margin-bottom: 4px;
   font-weight: 500;
+  margin: 0;
 }
 
 .card .tag {
@@ -446,15 +447,15 @@ html {
   padding: 30px 25px 70px 25px;
 }
 
-.home {
+.home-intro {
   padding: 0px;
 }
 
-.home .title-home-buy {
+.home-intro .title-home-buy {
   padding: 25px 25px;
 }
 
-.home .home-buy-info {
+.home-intro .home-buy-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -464,7 +465,7 @@ html {
   padding: 0px 25px;
 }
 
-.home .scrolling-wrapper {
+.home-intro .scrolling-wrapper {
   display: -ms-grid;
   display: grid;
   grid-gap: 15px;
@@ -473,7 +474,7 @@ html {
   overflow-x: scroll;
 }
 
-.home .scrolling-wrapper .card-home {
+.home-intro .scrolling-wrapper .card-home {
   scroll-snap-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -491,19 +492,19 @@ html {
   border-radius: 8px;
 }
 
-.home .scrolling-wrapper .card-home:first-child {
+.home-intro .scrolling-wrapper .card-home:first-child {
   padding-left: 20px;
 }
 
-.home .scrolling-wrapper .card-home:last-child {
+.home-intro .scrolling-wrapper .card-home:last-child {
   padding-right: 20px;
 }
 
-.home .scrolling-wrapper a {
+.home-intro .scrolling-wrapper a {
   margin: 0 auto;
 }
 
-.home .scrolling-wrapper img {
+.home-intro .scrolling-wrapper img {
   width: 100%;
   border-radius: 8px 8px 8px 8px;
   -o-object-fit: cover;
