@@ -17,6 +17,16 @@ body {
     margin: 0 auto;
     margin-bottom: 20px;
   }
+  h3 {
+    font-size: 1.5em;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  h4{
+    font-size: 1em;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
 
   p {
     margin: 0;
@@ -87,9 +97,133 @@ html {
 }
 
 
+
+
 .home{
   padding: 30px 25px 70px 25px;
   p{
     // margin-bottom: 20px;
   }
+
   }
+
+
+
+// ------ House ad  ------ //
+
+.profile-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+  .profile-title{
+
+  }
+  .profile-img{
+    img{
+      object-fit: cover;
+      height: 60px;
+      width: 60px;
+      border-radius: 100px;
+      border: 1px solid #979797;
+    }
+  }
+}
+
+.sub-menu{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  a{
+    text-decoration: none;
+    color:black;
+    font-size: 1.5em;
+    margin-bottom: 6px;
+  }
+}
+.personal-info{
+    border-top: 1px solid #979797;
+    padding-top: 15px;
+    .info{
+      p{
+        margin-bottom: 6px;
+      }
+    }
+}
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+  outline: inherit;
+  font-size: 1.5em;
+}
+
+
+
+
+// ------ House ad  ------ //
+
+  .house-ad{
+    .carrousel-img{
+      img{
+        height: 58vh;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    .house-info{
+      padding: 25px 25px 70px 25px;
+      .title-ad{
+        h2{
+          margin-bottom: 2px;
+        }
+        .sub-p {
+            margin-bottom: 20px;
+            color: #979797;
+        }
+        p{
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .details-ad{
+      margin-bottom: 30px;
+      p{
+        margin-bottom: 6px;
+      }
+      h3{
+        
+      }
+      .details-ad-info{
+        display: flex;
+      }
+      .details-ad-info-1 {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+      .details-ad-info-2{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+    }
+    .price-ad{
+      margin-bottom: 30px;
+    }
+    .contact{
+      display: flex;
+      flex-direction: column;
+      a{
+        margin-bottom: 20px;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+

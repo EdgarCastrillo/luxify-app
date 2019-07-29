@@ -325,6 +325,18 @@ body h2 {
   margin-bottom: 20px;
 }
 
+body h3 {
+  font-size: 1.5em;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+body h4 {
+  font-size: 1em;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
 body p {
   margin: 0;
 }
@@ -419,5 +431,145 @@ html {
 
 .home {
   padding: 30px 25px 70px 25px;
+}
+
+.profile-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.profile-header .profile-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+  border: 1px solid #979797;
+}
+
+.sub-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.sub-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+  margin-bottom: 6px;
+}
+
+.personal-info {
+  border-top: 1px solid #979797;
+  padding-top: 15px;
+}
+
+.personal-info .info p {
+  margin-bottom: 6px;
+}
+
+button, input[type="submit"], input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 1.5em;
+}
+
+.house-ad .carrousel-img img {
+  height: 58vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.house-ad .house-info {
+  padding: 25px 25px 70px 25px;
+}
+
+.house-ad .house-info .title-ad h2 {
+  margin-bottom: 2px;
+}
+
+.house-ad .house-info .title-ad .sub-p {
+  margin-bottom: 20px;
+  color: #979797;
+}
+
+.house-ad .house-info .title-ad p {
+  margin-bottom: 30px;
+}
+
+.house-ad .details-ad {
+  margin-bottom: 30px;
+}
+
+.house-ad .details-ad p {
+  margin-bottom: 6px;
+}
+
+.house-ad .details-ad .details-ad-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.house-ad .details-ad .details-ad-info-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.house-ad .details-ad .details-ad-info-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.house-ad .price-ad {
+  margin-bottom: 30px;
+}
+
+.house-ad .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.house-ad .contact a {
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,22 +1,35 @@
 <main class="home">
   <section class="auth-home">
-    <h2>{{user.name}} Profile's</h2>
-
-    <img src="" alt="">
+    <section class="profile-header">
+      <section class="profile-title">
+        <h2>{{user.name}}'s profile</h2>
+      </section>
+      <section class="profile-img">
+        <img src="/images/auth-bkground.png" alt="">
+      </section>
+    </section>
+    <section class="sub-menu">
     <a href="profile/edit">Edit profile</a>
+    <a href="profile/messages">Messages</a>
     <a href="profile/sells">My sells</a>
     <a href="profile/save">Saved houses</a>
+    <a href="">Help</a>
     <form action="/auth/logout" method="POST">
       <button type="submit">Logout</button>
     </form>
-
-    {{#if currentUser}}
-      <p>{{user.name}}</p>
-      <p>{{user.surname}}</p>
-      <p>{{user.email}}</p>
-      <p>{{user.phone}}</p>
-      <p>{{user.location}}</p>
-    {{/if}}
+    </section>
+    <section class="personal-info">
+      <h3>My personal information</h3>
+        {{#if currentUser}}
+        <section class="info">
+          <p>{{user.name}}</p>
+          <p>{{user.surname}}</p>
+          <p>{{user.email}}</p>
+          <p>{{user.phone}}</p>
+          <p>{{user.location}}</p>
+        </section>
+        {{/if}}
+    </section>
 
   </section>
 </main>

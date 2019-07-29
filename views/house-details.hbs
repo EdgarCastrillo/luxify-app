@@ -1,23 +1,38 @@
-
-<main>
-  <section>  
+<main class="house-ad">
+  <section class="carrousel-img">
+    {{!-- <i href=""><i class="fas fa-angle-left"></i></i> --}}
+    <img src="{{image}}" alt="{{title}}">
+  </section>
+  <section class="house-info">  
     <article>
-      <h2>{{title}}</h2>
-      <img src="{{image}}" alt="{{title}}">
-      <p class="sub-p">{{location}}</p>
-      <p>{{description}}</p>
-      <h3>Details</h3>
-      <p>{{area}} m2</p>
-      <p>{{rooms}} rooms</p>
-      <p>{{bathrooms}} bathrooms</p>
-      <p>{{garden}}</p>
-      <p>{{swimmingPool}}</p>
-      <p>{{privateBeach}}</p>
-      <h3>Price</h3>
-      <p>{{price}}</p>
-      <a href="/houses/sells/{{_id}}/edit">Edit</a>
-      <button type="submit">contact</button>
+      <section class="title-ad">
+        <h2>{{title}}</h2>
+        <p class="sub-p">{{location}}</p>
+        <p>{{description}}</p>
+      </section>
+      <section class="details-ad">
+        <h3>Details</h3>
+        <section class="details-ad-info">
+          <section class="details-ad-info-1">
+            <p>{{area}} m2</p>
+            <p>{{rooms}} rooms</p>
+            <p>{{bathrooms}} bathrooms</p>
+          </section>
+          <section class="details-ad-info-2">
+            <p>{{garden}}</p>
+            <p>{{swimmingPool}}</p>
+            <p>{{privateBeach}}</p>
+          </section>
+        </section>
+      </section>
+      <section class="price-ad">
+        <h3>Price</h3>
+        <p>{{price}}</p>
+      </section>
+      <section class="contact">
+        <a href="/houses/sells/{{_id}}/edit"><i class="far fa-edit"></i> Edit</a>
+        <button class="btn-black" type="submit">contact</button>
+      </section>
     </article>
- 
   </section>
 </main>
