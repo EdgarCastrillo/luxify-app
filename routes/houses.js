@@ -18,7 +18,7 @@ router.post('/form-sell', parser.single('image'), async (req, res, next) => {
   const { title, location, description, area, rooms, bathrooms, garden, swimmingPool, privateBeach, price } = req.body;
   const imageurl = req.file.secure_url;
   try {
-    const houses = await House.create({
+    await House.create({
       image: imageurl,
       title,
       location,
@@ -29,11 +29,9 @@ router.post('/form-sell', parser.single('image'), async (req, res, next) => {
       garden,
       swimmingPool,
       privateBeach,
-      price
+      price,
+      idUser: req.session.currentUser._id
     });
-    const houseId = houses._id;
-    const userId = req.session.currentUser._id;
-    await User.findByIdAndUpdate(userId, { $push: { houses: houseId } });
     res.redirect('/profile/sells');
   } catch (error) {
     next(error);
@@ -55,7 +53,7 @@ router.get('/sells/:id/edit', async (req, res, next) => {
     res.redirect('/auth');
   } else {
     const id = req.params.id;
-    const house = await House.findById(id).reverse();
+    const house = await House.findById(id);
     res.render('edit-house', house);
   }
 });

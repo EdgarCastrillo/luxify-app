@@ -334,11 +334,24 @@ body h3 {
 body h4 {
   font-size: 1em;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 body p {
   margin: 0;
+}
+
+body .sub-p {
+  color: #979797;
+  margin-bottom: 20px;
+}
+
+body a {
+  margin-left: 10px;
+  color: black;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 html {
@@ -431,6 +444,71 @@ html {
 
 .home {
   padding: 30px 25px 70px 25px;
+}
+
+.home {
+  padding: 0px;
+}
+
+.home .title-home-buy {
+  padding: 25px 25px;
+}
+
+.home .home-buy-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 25px;
+}
+
+.home .scrolling-wrapper {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 15px;
+  -ms-grid-columns: (85%)[6];
+      grid-template-columns: repeat(6, 85%);
+  overflow-x: scroll;
+}
+
+.home .scrolling-wrapper .card-home {
+  scroll-snap-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+}
+
+.home .scrolling-wrapper .card-home:first-child {
+  padding-left: 20px;
+}
+
+.home .scrolling-wrapper .card-home:last-child {
+  padding-right: 20px;
+}
+
+.home .scrolling-wrapper a {
+  margin: 0 auto;
+}
+
+.home .scrolling-wrapper img {
+  width: 100%;
+  border-radius: 8px 8px 8px 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 220px;
 }
 
 .profile-header {

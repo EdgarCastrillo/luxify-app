@@ -52,9 +52,8 @@ router.get('/sells', async (req, res, next) => {
   if (!req.session.currentUser) {
     res.redirect('/auth');
   } else {
-    const userId = req.session.currentUser._id;
-    const user = await User.findById(userId).populate('houses');
-    res.render('mySells', user);
+    const houses = await House.find({ idUser: req.session.currentUser._id });
+    res.render('mySells', { houses });
   }
 });
 
