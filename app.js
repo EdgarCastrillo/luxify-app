@@ -2,6 +2,8 @@
 
 const express = require('express');
 const path = require('path');
+require('dotenv').config();
+
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
@@ -17,7 +19,8 @@ const housesRouter = require('./routes/houses');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/luxify-db', {
+// mongoose.connect('mongodb://localhost/luxify-db', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
@@ -28,7 +31,8 @@ app.use(session({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
   }),
-  secret: 'some-string',
+  // secret: 'some-string',
+  secret: process.env.SECRET_SESSION,
   resave: true,
   saveUninitialized: true,
   cookie: {
