@@ -55,7 +55,7 @@ router.get('/sells/:id/edit', async (req, res, next) => {
     res.redirect('/auth');
   } else {
     const id = req.params.id;
-    const house = await House.findById(id);
+    const house = await House.findById(id).reverse();
     res.render('edit-house', house);
   }
 });
