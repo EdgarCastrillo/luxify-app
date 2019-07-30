@@ -1,73 +1,87 @@
 <main class="home-intro">
 
     <section class="title-home-buy">
-      <h2>What are you looking for?</h2>
+      <h2>Explore</h2>
     </section>
-
     <section class="home-buy">
       <section class="home-buy-info">
         <section class="home-buy-title">
           <h4>Buy</h4>
           <p class="sub-p">The house of your dreams</p>
         </section>
-          
+        <section class="home-buy-link">
+          <a href="/houses/all">see all</a>
+        </section>
+      </section>
+        <article class="scrolling-wrapper">
+          {{#each houses}} 
+            <section class="card-home">
+              <a href="/houses/sells/{{_id}}"><img src="{{image}}" alt="{{title}}"></a>
+            </section>
+          {{/each}}
+        </article>
+    </section>
+
+    <section class="home-buy">
+      <section class="home-buy-info">
+        <section class="home-buy-title">
+          <h4>Buy near you</h4>
+          <p class="sub-p">The house of your dreams</p>
+        </section>
         <section class="home-buy-link">
           <a href="">see all</a>
         </section>
       </section>
-
-          <article class="scrolling-wrapper">
-        {{#each houses}} 
-              <section class="card-home">
-                <a href="/houses/sells/{{_id}}"><img src="{{image}}" alt="{{title}}"></a>
-              </section>
-        {{/each}}
-          </article>
-
-    </section>
-
-    {{!-- <section class="home-buy-near-you">
-      <section class="home-buy-title">
-          <h4>Buy</h4>
-          <p>The house of your dreams</p>
-      </section>
-
-      <section class="home-buy-link">
-        <a href="">see all</a>
-      </section>
-
-      <article class="scrolling-wrapper">
-            <section class="card">
-              <h2>Card</h2>
+        <article class="scrolling-wrapper">
+          {{#each houses}} 
+            <section class="card-home">
+              <a href="/houses/sells/{{_id}}"><img src="{{image}}" alt="{{title}}"></a>
             </section>
-      </article>
+          {{/each}}
+        </article>
     </section>
 
     <section class="home-news">
-      <section class="home-buy-title">
-        <h4>News</h4>
-        <p>The house of your dreams</p>
+      <section class="home-news-info">
+        <section class="home-buy-title">
+          <h4>Latest news</h4>
+          <p class="sub-p">The house of your dreams</p>
+        </section>
+        {{!-- <section class="home-buy-link">
+          <a href="">see all</a>
+        </section> --}}
       </section>
-
-      <article class="scrolling-wrapper">
-            <section class="card">
-              <h2>Card</h2>
+        {{#each newHouses}} 
+        <article class="card-news">
+          <section class="card-img">
+              <a href="/houses/sells/{{_id}}"><img src="{{image}}" alt="{{title}}"></a>
             </section>
-      </article>
+            <section class="card-info">
+              <section class="card-text">
+                <p>{{title}}</p>
+                <p class="tag">{{location}}</p>
+              </section>
+              <section class="card-text-2">
+                <a href="/houses/sells/{{_id}}">see more</>
+                <a class="tag" href="/houses/sells/{{_id}}/edit">edit</a>
+              </section>
+          </section>
+        </article>
+        {{/each}}
     </section>
 
-    <section class="home-buy-map">
-      <section class="home-buy-title">
-        <h4>Find by map</h4>
-        <p>The house of your dreams</p>
+    <section class="home-buy">
+      <section class="home-buy-info">
+        <section class="home-buy-title">
+          <h4>Find by map</h4>
+          <p class="sub-p">The house of your dreams</p>
+        </section>
       </section>
-
-      <article class="scrolling-wrapper">
-            <section class="card">
-              <h2>Card</h2>
-            </section>
+      <article class="home-map">
+        <div id='geocoder' class='geocoder'></div>
+        <div class="map" id='map'></div>
       </article>
-    </section> --}}
+    </section>
 
 </main>
     

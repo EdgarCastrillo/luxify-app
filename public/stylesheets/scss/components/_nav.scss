@@ -9,6 +9,7 @@ nav {
   width: 100%;
   background-color:#f4f4f4;
   border-top: 1px solid #c6c6c6;
+  z-index: 10;
 
   ul {
     display: flex;
@@ -29,6 +30,9 @@ nav {
     color: black;
     text-decoration: none;
     font-size: 0.8em;
+  }
+  img{
+    height: 35px;
   }
   p{
     font-size: 0.6em;

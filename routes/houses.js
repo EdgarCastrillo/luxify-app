@@ -80,4 +80,14 @@ router.post('/sells/:id/delete', async (req, res, next) => {
   }
 });
 
+router.get('/all', async (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/auth');
+  } else {
+    const { _id } = req.session.currentUser;
+    const houses = await House.find().where('idUser').ne(_id).sort({ price: 1 }).limit();
+    res.render('allHouses', { houses });
+  }
+});
+
 module.exports = router;

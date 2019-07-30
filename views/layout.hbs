@@ -6,7 +6,10 @@
     <title>{{title}}</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="/stylesheets/main.css">
-    <script src="https://kit.fontawesome.com/803a88be75.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
     
   </head>
   <body>
@@ -15,27 +18,28 @@
     <nav>
       <ul>
         <li>
-          <a href="/"><i class="fas fa-search"></i></a>
+          <a href="/"><img src="/images/icons8-search-50.png" alt=""></a>
           <p>Explore</p>
         </li>
         <li>
-          <a href="/profile/save"><i class="far fa-heart"></i></a>
+          <a href="/profile/save"><img src="/images/icons8-bookmark-50.png" alt=""></a>
           <p>Save</p>
         </li>
         <li>
-          <a href="/houses/form-sell"><i class="far fa-plus-square"></i></a>
+          <a href="/houses/form-sell"><img src="/images/icons8-plus-math-50.png" alt=""></a>
           <p>Sell</p>
         </li>
         <li>
-          <a href="/profile/messages"><i class="far fa-comment-dots"></i></a>
+          <a href="/profile/messages"><img src="/images/icons8-chat-message-50.png" alt=""></a>
           <p>Messages</p>
         </li>
         <li>
-          <a href="/profile"><i class="fas fa-user"></i></a>
+          <a href="/profile"><img src="/images/icons8-customer-50.png" alt=""></a>
           <p>Profile</p>
         </li>
       </ul>
     </nav>
     {{/if}}
+    <script src="/javascripts/main.js"></script>
   </body>
 </html>

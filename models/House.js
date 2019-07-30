@@ -22,6 +22,13 @@ const houseSchema = new Schema({
     type: String,
     cordinates: []
   },
+  // location: {
+  //   type: {
+  //     type: String,
+  //     default: 'Point'
+  //   },
+  //   coordinates: [Number]
+  // },
   description: {
     type: String,
     required: true,

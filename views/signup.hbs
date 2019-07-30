@@ -6,9 +6,25 @@
     <section class="login">
       <h2>Sign Up</h2>
       <form class="form" action="/auth/signup" method="POST">
-        <input class="input-white" type="text" name="name" id="name"  placeholder="name">
-        <input class="input-white" type="text" name="email" id="email"  placeholder="email">
-        <input class="input-white" type="password" name="password" id="password"  placeholder="password">
+
+        <label for="name" class="inp-auth">
+          <input type="text" name="name" id="name"  placeholder="&nbsp;">
+          <span class="label">Name</span>
+          <span class="border"></span>
+        </label>  
+
+        <label for="email" class="inp-auth">
+          <input type="text" name="email" id="email"  placeholder="&nbsp;">
+          <span class="label">Email</span>
+          <span class="border"></span>
+        </label>  
+
+        <label for="password" class="inp-auth">
+          <input type="text" name="password" id="password"  placeholder="&nbsp;">
+          <span class="label">Password</span>
+          <span class="border"></span>
+        </label> 
+
         <button class="btn-white" type="submit">Sign up</button>
         <p<a class="log"><a href="/">Log in</a></p>
       </form>

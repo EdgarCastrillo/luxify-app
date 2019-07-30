@@ -5,9 +5,21 @@
     </section>
     <section class="login">
       <h2>Log In</h2>
+  
       <form class="form" action="/auth/login" method="POST">
-        <input class="input-white" type="text" name="email" id="email"  placeholder="email">
-        <input class="input-white" type="password" name="password" id="password" required placeholder="password">
+
+        <label for="email" class="inp-auth">
+          <input type="text" name="email" id="email"  placeholder="&nbsp;">
+          <span class="label">Email</span>
+          <span class="border"></span>
+        </label>  
+
+        <label for="password" class="inp-auth">
+          <input type="text" name="password" id="password"  placeholder="&nbsp;">
+          <span class="label">Password</span>
+          <span class="border"></span>
+        </label>  
+
         <button class="btn-white" type="submit">Log in</button>
         <p class="log">New user?<a href="auth/signup">Join us</a></p>
       </form>

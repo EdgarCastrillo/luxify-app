@@ -2,6 +2,7 @@
 
 @import 'scss/components/buttons';
 @import 'scss/components/forms';
+@import 'scss/components/forms-auth';
 @import 'scss/components/nav';
 @import 'scss/components/card';
 
@@ -23,9 +24,9 @@ body {
     margin-bottom: 20px;
   }
   h4{
-    font-size: 1em;
+    font-size: 1.2em;
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
   }
 
   p {
@@ -34,14 +35,12 @@ body {
 
   .sub-p{
     color: #979797;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   a{
-    margin-left: 10px;
     color: black;
     font-size: 1em;
-    font-weight: 500;
     text-decoration: none;
   }
 
@@ -122,53 +121,63 @@ html {
 .home-intro{
   padding: 0px;
     .title-home-buy{
-      padding: 25px 25px;
+      padding: 25px 25px 0px 25px;
     }
     .home-buy-info {
       display: flex;
       justify-content: space-between;
-      padding: 0px 25px;
+      border-top: 1px solid #dedede;
+      margin: 0px 20px;
+      padding-top: 12px;
     
       .home-buy-title{
-    
       }
       .home-buy-link{
-    
       }
     }
-    .scrolling-wrapper{
-      display: grid;
-      grid-gap: 15px;
-      grid-template-columns: repeat(6, 85%);
-      overflow-x: scroll;
-     
+    .home-buy {
+      margin-bottom: 40px;
+      .scrolling-wrapper{
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(6, 85%);
+        overflow-x: scroll;
+       
+        
+        .card-home {
+          scroll-snap-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 8px;
+          &:first-child{
+            padding-left: 20px;
+          }
+          &:last-child{
+            padding-right: 20px;
+          }
+        }
+  
       
-      .card-home {
-        scroll-snap-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-        &:first-child{
-          padding-left: 20px;
-        }
-        &:last-child{
-          padding-right: 20px;
-        }
-      }
-
-    
-      a{
-      margin: 0 auto;
-      }
-      img{
+        a{
+        margin: 0 auto;
         width: 100%;
-        border-radius: 8px 8px 8px 8px;
-        object-fit: cover;
-        height: 220px;
+        }
+        img{
+          width: 100%;
+          border-radius: 8px 8px 8px 8px;
+          object-fit: cover;
+          height: 180px;
+        }
       }
     }
+    .div-map {
+      width: 100%;
+      height: 60vh;
+      background-color: #e2e2e2;
+      margin-bottom: 60px;
+  }
 }
 
 
@@ -195,9 +204,10 @@ html {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    border-bottom: 1px solid #dedede;
 
   .profile-title{
-
+  
   }
   .profile-img{
     img{
@@ -205,7 +215,7 @@ html {
       height: 60px;
       width: 60px;
       border-radius: 100px;
-      border: 1px solid #979797;
+      border: 1px solid #dedede;
     }
   }
 }
@@ -219,16 +229,19 @@ html {
   a{
     text-decoration: none;
     color:black;
-    font-size: 1.5em;
-    margin-bottom: 6px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: 300;
   }
 }
 .personal-info{
-    border-top: 1px solid #979797;
+    border-top: 1px solid #dedede;
     padding-top: 15px;
     .info{
       p{
         margin-bottom: 6px;
+        font-size: 1.2em;
+        font-weight: 300;
       }
     }
 }
@@ -240,7 +253,8 @@ button, input[type="submit"], input[type="reset"] {
 	font: inherit;
 	cursor: pointer;
   outline: inherit;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  font-weight: 300;
 }
 
 
@@ -307,3 +321,18 @@ button, input[type="submit"], input[type="reset"] {
     }
   }
 
+.map{
+  width: 100%;
+  height: 60vh;
+  margin-bottom: 68px;
+}
+
+.map-form{
+  width: 100%;
+  height: 30vh;
+  margin-bottom: 20px;
+}
+
+.inp-location {
+  margin-bottom: 20px;
+}

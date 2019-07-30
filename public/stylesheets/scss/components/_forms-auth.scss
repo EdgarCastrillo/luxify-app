@@ -1,0 +1,90 @@
+
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  
+  .inp-auth {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    // max-width: 280px;
+  }
+  .inp-auth .label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transition: all 0.2s ease;
+  }
+  .inp-auth .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all 0.15s ease;
+  }
+  .inp-auth input {
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 12px 0;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #c8ccd4;
+    background: none;
+    border-radius: 0;
+    color: #ffffff;
+    transition: all 0.15s ease;
+  }
+  .inp-auth input:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .inp-auth input:not(:placeholder-shown) + span {
+    color: #ffffff;
+    transform: translateY(-26px) scale(0.75);
+  }
+  .inp-auth input:focus {
+    background: none;
+    outline: none;
+  }
+  .inp-auth input:focus + span {
+    color: rgb(255, 255, 255);
+    transform: translateY(-26px) scale(0.75);
+  }
+  .inp-auth input:focus + span + .border {
+    transform: scaleX(1);
+  }
+}
+
+textarea#description {
+  height: 80px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #9098a9;
+  padding-top: 41px;
+}
+
+label.img-select {
+  margin-bottom: 25px;
+  font-family: inherit;
+  padding: 12px 0;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  color:  #9098a9;
+  border-bottom: 1px solid #c8ccd4;
+}

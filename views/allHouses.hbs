@@ -1,0 +1,23 @@
+<main class="home">
+  <section class="auth-home"> 
+    <h2>All houses</h2>
+    <p class="sub-title">You can view and modify the houses you have for sale</p>
+    {{#each houses}} 
+    <article class="card">
+      <section class="card-img">
+        <a href="/houses/sells/{{_id}}"><img src="{{image}}" alt="{{title}}"></a>
+      </section>
+      <section class="card-info">
+        <section class="card-text">
+          <p>{{title}}</p>
+          <p class="tag">{{location}}</p>
+        </section>
+        <section class="card-text-2">
+          <a href="/houses/sells/{{_id}}">see more</a>
+          <a class="tag" href="/houses/sells/{{_id}}/edit">edit</a>
+        </section>
+      </section>
+    </article>
+    {{/each}}
+  </section>
+</main>

@@ -1,16 +1,45 @@
 <main class="home">
   <section class="auth-home">
     <h2>Form sell</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
     <form class="form" action="/houses/form-sell" method="POST" enctype="multipart/form-data">
-      {{!-- <label for="title">Title</label>         --}}
-      <input class="input-black" type="text" name="title" id="title"  placeholder="Title">
-      {{!-- <label for="image">Image</label>         --}}
-      <input class="input-black" type="file" name="image">
-      {{!-- <label for="area">Area</label>         --}}
-      <input class="input-black" type="text" name="area" id="area"  placeholder="area">
-      <input class="input-black" type="text" name="location" id="location"  placeholder="location">
-      {{!-- <label for="description">Description</label>         --}}
-      <textarea name="description" id="description"  placeholder="description"></textarea>
+
+       <label for="image" class="img-select">
+         <span class="label">Images</span>
+        <input class="" type="file" name="image">
+      </label>  
+
+      <label for="title" class="inp">
+        <input type="text" name="title" id="title"  placeholder="&nbsp;">
+        <span class="label">Title</span>
+        <span class="border"></span>
+      </label>    
+      
+      <label for="area" class="inp">
+        <input type="text" name="area" id="area"  placeholder="&nbsp;">
+        <span class="label">Area</span>
+        <span class="border"></span>
+      </label> 
+
+      <label for="location" class="inp-location">
+        <div id='geocoder' class='geocoder'></div>
+        <div class="map-form" id='map'></div>
+      </label>
+
+      {{!-- <label for="location" class="inp">
+        <input type="text" name="location" id="location"  placeholder="&nbsp;">
+        <span class="label">Location</span>
+        <span class="border"></span>
+      </label>   --}}
+
+      <label for="description" class="inp">
+         <textarea name="description" id="description"  placeholder="&nbsp;"></textarea>
+        <span class="label">Description</span>
+        <span class="border"></span>
+      </label>  
+      
+      
+     
       {{!-- <label for="rooms">Rooms</label>                 --}}
         <select name="rooms" id="rooms">
           <option value="0"></option>
