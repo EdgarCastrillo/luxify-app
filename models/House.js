@@ -19,16 +19,12 @@ const houseSchema = new Schema({
     unique: false
   },
   location: {
-    type: String,
-    cordinates: []
+    type: {
+      type: String,
+      default: 'Point'
+    },
+    coordinates: [Number]
   },
-  // location: {
-  //   type: {
-  //     type: String,
-  //     default: 'Point'
-  //   },
-  //   coordinates: [Number]
-  // },
   description: {
     type: String,
     required: true,
