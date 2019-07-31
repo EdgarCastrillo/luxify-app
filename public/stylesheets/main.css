@@ -353,7 +353,7 @@ nav p {
   font-size: 0.6em;
   margin: 0;
   padding: 0;
-  padding: 2px 0px;
+  padding: 0px 0px;
 }
 
 .fas.fa-search {
@@ -486,7 +486,8 @@ nav p {
           flex-direction: column;
   -webkit-box-align: end;
       -ms-flex-align: end;
-          align-items: end;
+          align-items: flex-end;
+  width: 33%;
 }
 
 .card p {
@@ -603,8 +604,23 @@ nav p {
 }
 
 .popup {
-  width: 90px;
-  height: 100px;
+  width: 150px;
+  height: 114px;
+}
+
+.popup img {
+  width: 100%;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.map .mapboxgl-popup-content {
+  padding: 0px;
+  border-radius: 8px;
+}
+
+p.popup-details-title {
+  padding: 0px 5px 5px 10px;
+  font-weight: 500;
 }
 
 body {
@@ -970,7 +986,7 @@ button, input[type="submit"], input[type="reset"] {
 .map {
   width: 100%;
   height: 60vh;
-  margin-bottom: 68px;
+  margin-bottom: 62px;
 }
 
 .map-form {

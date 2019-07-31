@@ -77,8 +77,7 @@ const main = () => {
             .setHTML(`
             <div class="popup">
               <div class="popup-img">
-                <div class="popup-img-avatar" style="background-image:url(${element.image})">
-                <img src="url(${element.image}">
+              <a href="/houses/sells/${element._id}"><img src="${element.image}"></a>
                 </div>
               </div>
               <div class="popup-details">
