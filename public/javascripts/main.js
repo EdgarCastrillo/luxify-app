@@ -1,15 +1,15 @@
 'use strict';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZWRnYXJjYXN0cmlsbG8iLCJhIjoiY2p5aW42c2F4MDA5bDNjcnhnOW5mNWc1ayJ9.8GSdtr-slz3DfPjxzqQ3FA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZWRnYXJjYXN0cmlsbG8iLCJhIjoiY2p5cTlsZWo2MDAzeTNuczBlNWhxZGxzMCJ9.hySaKuMXT6KAb3qksvZccw';
 const main = () => {
   if ('geolocation' in navigator) {
-    navigator.geolocation.getCurrentPosition(position => {
+    navigator.geolocation.getCurrentPosition(async (position) => {
       console.log(`User position: ${position.coords.latitude}, ${position.coords.longitude}`);
       var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v10',
         center: [position.coords.longitude, position.coords.latitude],
-        zoom: 14
+        zoom: 8
       });
 
       var geocoder = new MapboxGeocoder({
@@ -32,6 +32,19 @@ const main = () => {
         // console.log(locationInput.value);
       });
 
+      const searchHouses = async () => {
+        try {
+          const housesRequest = await fetch(`/api/users`);
+          if (housesRequest.status === 404) {
+            console.error('No houses');
+          }
+          const arrayHouses = await housesRequest.json();
+          return arrayHouses;
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
       var geolocate = new mapboxgl.GeolocateControl(
         {
           positionOptions: {
@@ -51,40 +64,39 @@ const main = () => {
       });
 
       document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+      const array = await testing();
+
+      array.forEach(element => {
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage = "url('https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png";
+        new mapboxgl.Marker(el)
+          .setLngLat(element.location.coordinates)
+          .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+            .setHTML(`
+            <div class="popup">
+              <div class="popup-img">
+                <div class="popup-img-avatar" style="background-image:url(${element.image})">
+                <img src="url(${element.image}">
+                </div>
+              </div>
+              <div class="popup-details">
+                <p class="popup-details-title"><a href="/profile/${element._id}">${element.title}</a></p>
+              </div>
+            </div>
+            `))
+          .addTo(map);
+      });
     });
   }
 };
 
+const testing = async () => {
+  const response = await axios.get('/api');
+  return response.data;
+};
+
+testing();
+
 window.addEventListener('load', main);
-
-// if ('geolocation' in navigator) {
-//   navigator.geolocation.getCurrentPosition(position => {
-//     const geocoder = new MapboxGeocoder({
-//       accessToken: mapboxgl.accessToken,
-//       mapboxgl: mapboxgl
-//     });
-
-//     const map = new mapboxgl.Map({
-//       // container id specified in the HTML
-//       container: 'map',
-//       // style URL
-//       style: 'mapbox://styles/mapbox/light-v10',
-//       // initial position in [lon, lat] format
-//       center: [position.coords.longitude, position.coords.latitude],
-//       // initial zoom
-//       zoom: 14
-//     });
-
-//     map.addControl(new mapboxgl.GeolocateControl({
-//       positionOptions: {
-//         enableHighAccuracy: true
-//       },
-//       trackUserLocation: false
-//     }));
-//     geocoder.on('result', function (result) {
-//       console.log(result.result.geometry.coordinates);
-//       const form = document.querySelector('location');
-//     });
-//     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-//   });
-// } else { /* geolocation IS NOT available, handle it */ }

@@ -21,41 +21,51 @@
         <span class="border"></span>
       </label> 
 
-      <label for="location" class="inp-location">
-        <div id='geocoder' class='geocoder'></div>
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Location</span>
+        </section>
+        <span class="border"></span>
+        <div id='geocoder' class='geocoder-form'></div>
         <div class="map-form" id='map'></div>
         <input type="hidden" name="location" class="location" >
-      </label>
-
-
+      </section>
+     
       {{!-- <label for="location" class="inp">
         <input type="text" name="location" id="location"  placeholder="&nbsp;">
         <span class="label">Location</span>
         <span class="border"></span>
       </label>   --}}
 
-      <label for="description" class="inp">
-         <textarea name="description" id="description"  placeholder="&nbsp;"></textarea>
-        <span class="label">Description</span>
-        <span class="border"></span>
-      </label>  
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Description</span>
+        </section>
+          <textarea name="description" id="description"  placeholder="&nbsp;"></textarea>
+      </section>
+        
       
-      
-     
-      {{!-- <label for="rooms">Rooms</label>                 --}}
-        <select name="rooms" id="rooms">
-          <option value="0"></option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-        </select>
-        {{!-- <label for="bathrooms">Bathrooms</label>         --}}
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Rooms</span>
+            <select name="rooms" id="rooms">
+              <option value="0">number of rooms</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </section>
+        </section>
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Bathrooms</span>
           <select name="bathrooms" id="bathrooms">
-            <option value="0"></option>
+            <option value="0">number of bathrooms</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -64,23 +74,49 @@
             <option value="6">6</option>
             <option value="7">7</option>
           </select>
-        {{!-- <label for="swimmingPool">Swimmingpool</label>         --}}
-        <select name="swimmingPool" id="swimmingPool">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        {{!-- <label for="garden">Garden</label>  --}}
-        <select name="garden" id="Garden">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        {{!-- <label for="privateBeach">Private beach</label>  --}}
-        <select name="privateBeach" id="privateBeach">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        {{!-- <label for="price">Price</label> --}}
-        <input class="input-black" type="text" name="price" id="price" placeholder="Price – €">
+        </section>
+      </section>
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Swimmingpool</span>
+            <select name="swimmingPool" id="swimmingPool">
+              <option value="yes">–</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </section>
+        </section>
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Garden</span>
+            <select name="garden" id="Garden">
+              <option value="yes">–</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </section>
+        </section>
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Private beach</span>
+            <select name="privateBeach" id="privateBeach">
+              <option value="yes">–</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </section>
+        </section>
+
+       
+      <label for="price" class="inp">
+        <input class="input-black" type="text" name="price" id="price" placeholder="&nbsp;">
+        <span class="label">Price</span>
+        <span class="border"></span>
+      </label>    
+        
           <button class="btn-black" type="submit">Publish</button>
           <button class="btn-delete" type="submit">Reset</button>
     </form>

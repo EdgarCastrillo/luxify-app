@@ -5,6 +5,7 @@
 @import 'scss/components/forms-auth';
 @import 'scss/components/nav';
 @import 'scss/components/card';
+@import 'scss/components/popup';
 
 
 body {
@@ -168,7 +169,7 @@ html {
           width: 100%;
           border-radius: 8px 8px 8px 8px;
           object-fit: cover;
-          height: 180px;
+          height: 22vh;
         }
       }
     }
@@ -318,6 +319,9 @@ button, input[type="submit"], input[type="reset"] {
         text-decoration: none;
         color: black;
       }
+      img {
+        height: 30px;
+    }
     }
   }
 
@@ -336,3 +340,12 @@ button, input[type="submit"], input[type="reset"] {
 .inp-location {
   margin-bottom: 20px;
 }
+
+
+.marker {
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: cover;
+  /* background: black; */
+ }

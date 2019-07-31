@@ -17,7 +17,7 @@
 
 .btn-black {
   margin-bottom: 14px;
-  margin-top: 10px;
+  margin-top: 14px;
   border-radius: 8px;
   border: none;
   height: 50px;
@@ -31,6 +31,7 @@
 }
 
 .btn-delete {
+  width: 100%;
   margin-bottom: 14px;
   border-radius: 8px;
   border: none;
@@ -135,6 +136,10 @@
           transform: scaleX(1);
 }
 
+.form-delete {
+  margin-top: 0px;
+}
+
 textarea#description {
   height: 80px;
   width: 100%;
@@ -142,7 +147,6 @@ textarea#description {
   font-weight: 500;
   font-size: 16px;
   color: #9098a9;
-  padding-top: 41px;
 }
 
 label.img-select {
@@ -154,6 +158,29 @@ label.img-select {
   font-weight: 500;
   color: #9098a9;
   border-bottom: 1px solid #c8ccd4;
+}
+
+.geocoder-home {
+  margin: 20px 25px 25px 25px;
+}
+
+.geocoder-form {
+  margin: 0px 0px 25px 0px;
+}
+
+section.title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c8ccd4;
+  margin-bottom: 15px;
+}
+
+span.loc {
+  color: #9098a9;
+  font-weight: 500;
+}
+
+section.location-section {
+  margin-top: 12px;
 }
 
 .form {
@@ -252,11 +279,10 @@ textarea#description {
   font-weight: 500;
   font-size: 16px;
   color: #9098a9;
-  padding-top: 41px;
 }
 
 label.img-select {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-family: inherit;
   padding: 12px 0;
   height: 48px;
@@ -483,6 +509,7 @@ nav p {
 
 .home-news {
   padding: 0px 25px;
+  margin-bottom: 40px;
 }
 
 .home-news .home-news-info {
@@ -507,7 +534,7 @@ nav p {
   border-radius: 8px 8px 0px 0px;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 300px;
+  height: 32vh;
 }
 
 .home-news .card-news .card-info {
@@ -545,7 +572,8 @@ nav p {
           flex-direction: column;
   -webkit-box-align: end;
       -ms-flex-align: end;
-          align-items: end;
+          align-items: flex-end;
+  width: 36%;
 }
 
 .home-news .card-news p {
@@ -564,6 +592,19 @@ nav p {
 .home-news .card-news .tag {
   color: #afafaf;
   font-weight: 300;
+}
+
+.marker {
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: cover;
+  /* background: black; */
+}
+
+.popup {
+  width: 90px;
+  height: 100px;
 }
 
 body {
@@ -767,7 +808,7 @@ html {
   border-radius: 8px 8px 8px 8px;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 180px;
+  height: 22vh;
 }
 
 .home-intro .div-map {
@@ -922,6 +963,10 @@ button, input[type="submit"], input[type="reset"] {
   color: black;
 }
 
+.house-ad .contact img {
+  height: 30px;
+}
+
 .map {
   width: 100%;
   height: 60vh;
@@ -936,5 +981,13 @@ button, input[type="submit"], input[type="reset"] {
 
 .inp-location {
   margin-bottom: 20px;
+}
+
+.marker {
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: cover;
+  /* background: black; */
 }
 /*# sourceMappingURL=main.css.map */

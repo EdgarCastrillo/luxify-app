@@ -1,30 +1,70 @@
 <main class="home">
   <section class="auth-home">
+    <h2>Edit form sell</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
     <form class="form" action="/houses/sells/{{_id}}/edit" method="POST">
-      {{!-- <label for="title">Title</label>         --}}
-      <input class="input-black" type="text" name="title" id="title" value="{{title}}" placeholder="Title">
-      {{!-- <label for="photos">Photos</label>         --}}
-      <input class="input-black" type="file" name="photos" id="photos" value="{{photos}}" placeholder="photos">
-      {{!-- <label for="area">Area</label>         --}}
-      <input class="input-black" type="text" name="area" id="area" value="{{area}}" placeholder="area">
-      <input type="text" name="location" id="location" value="{{location}}"  placeholder="location">
-      <label for="description">Description</label>        
-      <textarea name="description" id="description" value="{{description}}" placeholder="description">
-      </textarea>
-      <label for="rooms">Rooms</label>                
-        <select name="rooms" id="rooms" value="{{rooms}}">
-          <option value="0"></option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-        </select>
-        <label for="bathrooms">Bathrooms</label>        
-          <select name="bathrooms" id="bathrooms" value="{{bathrooms}}">
-            <option value="0"></option>
+      <label for="image" class="img-select">
+         <span class="label">Images</span>
+        <input class="" type="file" name="image">
+      </label>  
+
+      <label for="title" class="inp">
+        <input type="text" name="title" id="title" value="{{title}}" placeholder="&nbsp;">
+        <span class="label">Title</span>
+        <span class="border"></span>
+      </label>    
+      
+      <label for="area" class="inp">
+        <input type="text" name="area" id="area" value="{{area}}" placeholder="&nbsp;">
+        <span class="label">Area</span>
+        <span class="border"></span>
+      </label> 
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Location</span>
+        </section>
+        <span class="border"></span>
+        <div id='geocoder' class='geocoder-form'></div>
+        <div class="map-form" id='map'></div>
+        <input type="hidden" name="location" class="location" >
+      </section>
+     
+      {{!-- <label for="location" class="inp">
+        <input type="text" name="location" id="location"  placeholder="&nbsp;">
+        <span class="label">Location</span>
+        <span class="border"></span>
+      </label>   --}}
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Description</span>
+        </section>
+          <textarea name="description" id="description" value="{{description}}" placeholder="&nbsp;"></textarea>
+      </section>
+        
+      
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Rooms</span>
+            <select name="rooms" id="rooms">
+              <option value="0">number of rooms</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </section>
+        </section>
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Bathrooms</span>
+          <select name="bathrooms" id="bathrooms">
+            <option value="0">number of bathrooms</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -33,24 +73,49 @@
             <option value="6">6</option>
             <option value="7">7</option>
           </select>
-        <label for="swimmingPool">Swimmingpool</label>        
-        <select name="swimmingPool" id="swimmingPool"value="{{swimmingPool}}">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        <label for="garden">Garden</label> 
-        <select name="garden" id="Garden" value="{{garden}}">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        <label for="privateBeach">Private beach</label> 
-        <select name="privateBeach" id="privateBeach" value="{{privateBeach}}"> 
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        <label for="price">Price</label>
-        <input class="btn-black" type="text" name="price" id="price" value="{{price}}" placeholder="€">
-          <button type="submit">Update</button> 
+        </section>
+      </section>
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Swimmingpool</span>
+            <select name="swimmingPool" id="swimmingPool">
+              <option value="yes">–</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </section>
+        </section>
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Garden</span>
+            <select name="garden" id="Garden">
+              <option value="yes">–</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </section>
+        </section>
+
+      <section class="location-section">
+        <section class="title">
+          <span class="loc">Private beach</span>
+            <select name="privateBeach" id="privateBeach">
+              <option value="yes">–</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </section>
+        </section>
+
+       
+      <label for="price" class="inp">
+        <input class="input-black" type="text" name="price" id="price" value="{{price}}" placeholder="&nbsp;">
+        <span class="label">Price</span>
+        <span class="border"></span>
+      </label>
+          <button class="btn-black" type="submit">Update</button> 
     </form>
     <form class="delete-action" action="/houses/sells/{{_id}}/delete" method="POST">
       <button class="btn-delete" type="submit">Delete</button>

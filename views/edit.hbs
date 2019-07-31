@@ -3,20 +3,41 @@
     <h2>Edit profile</h2>
     <p class="sub-p">In this section you can edit your profile information</p>
     <form class="form" action="/profile/edit" method="POST">
-      {{!-- <label for="name">Name</label> --}}
-      <input class="input-black" type="text" name="name" id="name"  value="{{user.name}}">
-      {{!-- <label for="surname">Surname</label> --}}
-      <input class="input-black" type="text" name="surname" id="surname"  placeholder="Surname" value="{{user.surname}}">
-      {{!-- <label for="email">Email</label> --}}
-      <input class="input-black" type="text" name="email" id="email"  value="{{user.email}}">
-      {{!-- <label for="phone">Phone</label> --}}
-      <input class="input-black" type="text" name="phone" id="phone"  placeholder="Phone" value="{{user.phone}}">
-      {{!-- <label for="location">Location</label> --}}
-      <input class="input-black" type="location" name="location" id="location"  placeholder="Location" value="{{user.location}}">
+      
+      <label for="name" class="inp">
+        <input class="input-black" type="text" name="name" id="name"  value="{{user.name}}" placeholder="&nbsp;">
+        <span class="label">Name</span>
+        <span class="border"></span>
+      </label>   
+      
+
+      <label for="surname" class="inp">
+        <input class="input-black" type="text" name="surname" id="surname" value="{{user.surname}}" placeholder="&nbsp;">
+        <span class="label">Surname</span>
+        <span class="border"></span>
+      </label> 
+     
+      <label for="email" class="inp">
+        <input class="input-black" type="text" name="email" id="email"  value="{{user.email}}" placeholder="&nbsp;">
+        <span class="label">Email</span>
+        <span class="border"></span>
+      </label> 
+      
+      <label for="Phone" class="inp">
+        <input class="input-black" type="text" name="phone" id="phone" value="{{user.phone}}" placeholder="&nbsp;">
+        <span class="label">Phone</span>
+        <span class="border"></span>
+      </label> 
+      
+      <label for="Location" class="inp">
+        <input class="input-black" type="location" name="location" id="location" value="{{user.location}}" placeholder="&nbsp;">
+        <span class="label">Location</span>
+        <span class="border"></span>
+      </label> 
       <button class="btn-black" type="submit">Update</button>
     </form>
-    <form class="form" action="/profile/delete" method="POST">
-      <button class="btn-delete" type="submit">Delete</button>
+    <form class="form-delete" action="/profile/delete" method="POST">
+      <button class="btn-delete" type="submit">Delete profile</button>
     </form>
 </section>
 </main>
