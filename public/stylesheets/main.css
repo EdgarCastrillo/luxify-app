@@ -46,7 +46,22 @@
   letter-spacing: 1px;
 }
 
-.form {
+section.title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c8ccd4;
+  margin-bottom: 15px;
+}
+
+span.loc {
+  color: #9098a9;
+  font-weight: 500;
+}
+
+section.location-section {
+  margin-top: 12px;
+}
+
+.sell-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,14 +72,32 @@
   margin-top: 40px;
 }
 
-.form .inp {
+.sell-form .upload-image {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sell-form .upload-image .select-img {
+  width: 60%;
+}
+
+.sell-form .upload-image .btn-upload {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 1em;
+}
+
+.sell-form .inp {
   position: relative;
   margin: auto;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.form .inp .label {
+.sell-form .inp .label {
   position: absolute;
   top: 16px;
   left: 0;
@@ -77,7 +110,7 @@
   transition: all 0.2s ease;
 }
 
-.form .inp .border {
+.sell-form .inp .border {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -93,7 +126,7 @@
   transition: all 0.15s ease;
 }
 
-.form .inp input {
+.sell-form .inp input {
   -webkit-appearance: none;
   width: 100%;
   border: 0;
@@ -110,28 +143,28 @@
   transition: all 0.15s ease;
 }
 
-.form .inp input:hover {
+.sell-form .inp input:hover {
   background: rgba(34, 50, 84, 0.03);
 }
 
-.form .inp input:not(:placeholder-shown) + span {
+.sell-form .inp input:not(:placeholder-shown) + span {
   color: #5a667f;
   -webkit-transform: translateY(-26px) scale(0.75);
           transform: translateY(-26px) scale(0.75);
 }
 
-.form .inp input:focus {
+.sell-form .inp input:focus {
   background: none;
   outline: none;
 }
 
-.form .inp input:focus + span {
+.sell-form .inp input:focus + span {
   color: black;
   -webkit-transform: translateY(-26px) scale(0.75);
           transform: translateY(-26px) scale(0.75);
 }
 
-.form .inp input:focus + span + .border {
+.sell-form .inp input:focus + span + .border {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
@@ -149,40 +182,6 @@ textarea#description {
   color: #9098a9;
 }
 
-label.img-select {
-  margin-bottom: 25px;
-  font-family: inherit;
-  padding: 12px 0;
-  height: 48px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #9098a9;
-  border-bottom: 1px solid #c8ccd4;
-}
-
-.geocoder-home {
-  margin: 20px 25px 25px 25px;
-}
-
-.geocoder-form {
-  margin: 0px 0px 25px 0px;
-}
-
-section.title {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #c8ccd4;
-  margin-bottom: 15px;
-}
-
-span.loc {
-  color: #9098a9;
-  font-weight: 500;
-}
-
-section.location-section {
-  margin-top: 12px;
-}
-
 .form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -192,6 +191,12 @@ section.location-section {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 40px;
+}
+
+.form .upload-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .form .inp-auth {
@@ -281,17 +286,6 @@ textarea#description {
   color: #9098a9;
 }
 
-label.img-select {
-  margin-bottom: 20px;
-  font-family: inherit;
-  padding: 12px 0;
-  height: 48px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #9098a9;
-  border-bottom: 1px solid #c8ccd4;
-}
-
 nav {
   display: none;
   display: -webkit-box;
@@ -354,76 +348,6 @@ nav p {
   margin: 0;
   padding: 0;
   padding: 0px 0px;
-}
-
-.fas.fa-search {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 2em;
-}
-
-.far.fa-heart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 2em;
-}
-
-.far.fa-plus-square {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 2em;
-}
-
-.far.fa-comment-dots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 2em;
-}
-
-.fas.fa-user {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 2em;
 }
 
 .sub-title {
@@ -621,6 +545,38 @@ nav p {
 p.popup-details-title {
   padding: 0px 5px 5px 10px;
   font-weight: 500;
+}
+
+.geocoder-home {
+  margin: 20px 25px 25px 25px;
+}
+
+.geocoder-form {
+  margin: 0px 0px 25px 0px;
+}
+
+.map {
+  width: 100%;
+  height: 60vh;
+  margin-bottom: 62px;
+}
+
+.map-form {
+  width: 100%;
+  height: 30vh;
+  margin-bottom: 20px;
+}
+
+.inp-location {
+  margin-bottom: 20px;
+}
+
+.marker {
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: cover;
+  /* background: black; */
 }
 
 body {
@@ -899,7 +855,7 @@ button, input[type="submit"], input[type="reset"] {
   font-weight: 300;
 }
 
-.house-ad .carrousel-img img {
+.house-ad .carrousel img {
   height: 58vh;
   -o-object-fit: cover;
      object-fit: cover;
@@ -981,29 +937,5 @@ button, input[type="submit"], input[type="reset"] {
 
 .house-ad .contact img {
   height: 30px;
-}
-
-.map {
-  width: 100%;
-  height: 60vh;
-  margin-bottom: 62px;
-}
-
-.map-form {
-  width: 100%;
-  height: 30vh;
-  margin-bottom: 20px;
-}
-
-.inp-location {
-  margin-bottom: 20px;
-}
-
-.marker {
-  height: 50px;
-  width: 50px;
-  background-position: center;
-  background-size: cover;
-  /* background: black; */
 }
 /*# sourceMappingURL=main.css.map */

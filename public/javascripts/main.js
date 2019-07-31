@@ -20,11 +20,6 @@ const main = () => {
           limit: 3
         });
 
-        // map.on('load', () => {
-        //   // const locationInput = document.querySelector('.location');
-        //   // test();
-        // });
-
         // función que devuelve las coordenadas del resultado seleccionado
         geocoder.on('result', (selected) => {
           const selectedCoord = selected.result.geometry.coordinates;
@@ -112,7 +107,6 @@ const main = () => {
       formData.append('image', event.target.parentElement.children[1].files[0]);
       const imageUrl = await axios.post('/api/image-upload', formData);
       const image = document.createElement('img');
-      // imageContainer.appendChild(image);
       image.setAttribute('src', imageUrl.data);
       imageContainer.appendChild(image);
       imageArray.push(imageUrl.data);
@@ -122,24 +116,10 @@ const main = () => {
 
         buttonFile.replaceWith(p);
       }
-      // const image_container = document.querySelector('.photo-up-container');
-
-      // console.log(imageArray);
     });
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      // console.log(event.srcElement.title.value);
 
-      // console.log(event.srcElement.area.value);
-      // console.log(event.srcElement.location.value);
-      // console.log(event.srcElement.description.value);
-
-      // console.log(event.srcElement.rooms.value);
-      // console.log(event.srcElement.bathrooms.value);
-      // console.log(event.srcElement.swimmingPool.value);
-      // console.log(event.srcElement.garden.value);
-      // console.log(event.srcElement.privateBeach.value);
-      // console.log(event.srcElement.price.value);
       const house = {
         title: event.srcElement.title.value,
         area: event.srcElement.location.value,
