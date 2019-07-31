@@ -1,6 +1,8 @@
 <main class="house-ad">
   <section class="carrousel-img">
-    <img src="{{image}}" alt="{{title}}">
+    {{#each image}}
+    <img src="{{this}}" alt="{{../title}}">
+    {{/each}}
   </section>
   <section class="house-info">  
     <article>

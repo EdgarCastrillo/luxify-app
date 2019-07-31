@@ -5,18 +5,18 @@ const bcrypt = require('bcrypt');
 
 const User = require('../models/User.js');
 
+const { isLoggedIn, isNotLoggedIn, isFormFilled } = require('../middlewares/authMiddlewares.js');
 const saltRounds = 10;
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  if (req.session.currentUser) {
-    res.render('/');
-  } else {
-    res.render('login');
-  }
+router.get('/', isLoggedIn, (req, res, next) => {
+  // if (req.session.currentUser) {
+  //   res.render('/');
+  // } else {
+  res.render('login');
 });
 
-router.post('/login', async (req, res, next) => {
+router.post('/login', isLoggedIn, async (req, res, next) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
@@ -32,17 +32,19 @@ router.post('/login', async (req, res, next) => {
   }
 });
 
-router.get('/signup', (req, res, next) => {
-  if (req.session.currentUser) {
-    // res.redirect('/home');
-  }
-  res.render('signup');
+router.get('/signup', isLoggedIn, (req, res, next) => {
+  // if (req.session.currentUser) {
+  //   // res.redirect('/home');
+  // }
+  // res.render('signup');
+  const data = {
+    messages: req.flash('errorFormNotFilled') };
+  res.render('signup', data);
 });
 
-router.post('/signup', async (req, res, next) => {
+router.post('/signup', isLoggedIn, isFormFilled, async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
-
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPassword = bcrypt.hashSync(password, salt);
     const newUser = await User.create({
@@ -57,7 +59,7 @@ router.post('/signup', async (req, res, next) => {
   }
 });
 
-router.post('/logout', (req, res, next) => {
+router.post('/logout', isNotLoggedIn, (req, res, next) => {
   delete req.session.currentUser;
   res.redirect('/');
 });

@@ -16,7 +16,7 @@
         <article class="scrolling-wrapper">
           {{#each houses}} 
             <section class="card-home">
-              <a href="/houses/sells/{{_id}}"><img src="{{image}}" alt="{{title}}"></a>
+              <a href="/houses/sells/{{_id}}"><img src="{{image.[0]}}" alt="{{title}}"></a>
             </section>
           {{/each}}
         </article>
@@ -35,7 +35,7 @@
         <article class="scrolling-wrapper">
           {{#each houses}} 
             <section class="card-home">
-              <a href="/houses/sells/{{_id}}"><img src="{{image}}" alt="{{title}}"></a>
+              <a href="/houses/sells/{{_id}}"><img src="{{image.[0]}}" alt="{{title}}"></a>
             </section>
           {{/each}}
         </article>
@@ -54,7 +54,7 @@
         {{#each newHouses}} 
         <article class="card-news">
           <section class="card-img">
-              <a href="/houses/sells/{{_id}}"><img src="{{image}}" alt="{{title}}"></a>
+              <a href="/houses/sells/{{_id}}"><img src="{{image.[0]}}" alt="{{title}}"></a>
             </section>
             <section class="card-info">
               <section class="card-text">

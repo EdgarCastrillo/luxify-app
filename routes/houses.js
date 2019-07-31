@@ -14,31 +14,31 @@ router.get('/form-sell', (req, res, next) => {
   }
 });
 
-router.post('/form-sell', parser.single('image'), async (req, res, next) => {
-  const { title, description, area, rooms, bathrooms, garden, swimmingPool, privateBeach, price } = req.body;
-  const imageurl = req.file.secure_url;
-  const location = req.body.location.split(',').map(Number);
-  try {
-    await House.create({
-      image: imageurl,
-      title,
-      location,
-      description,
-      area,
-      rooms,
-      bathrooms,
-      garden,
-      swimmingPool,
-      privateBeach,
-      price,
-      idUser: req.session.currentUser._id,
-      location: { coordinates: location }
-    });
-    res.redirect('/profile/sells');
-  } catch (error) {
-    next(error);
-  }
-});
+// router.post('/form-sell', parser.single('image'), async (req, res, next) => {
+//   const { title, description, area, rooms, bathrooms, garden, swimmingPool, privateBeach, price } = req.body;
+//   const imageurl = req.file.secure_url;
+//   const location = req.body.location.split(',').map(Number);
+//   try {
+//     await House.create({
+//       image: imageurl,
+//       title,
+//       location,
+//       description,
+//       area,
+//       rooms,
+//       bathrooms,
+//       garden,
+//       swimmingPool,
+//       privateBeach,
+//       price,
+//       idUser: req.session.currentUser._id,
+//       'location.coordinates': location
+//     });
+//     res.redirect('/profile/sells');
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 router.get('/sells/:id', async (req, res, next) => {
   try {

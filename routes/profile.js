@@ -53,6 +53,7 @@ router.get('/sells', async (req, res, next) => {
     res.redirect('/auth');
   } else {
     const houses = await House.find({ idUser: req.session.currentUser._id });
+    console.log(houses);
     res.render('mySells', { houses });
   }
 });

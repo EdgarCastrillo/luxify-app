@@ -15,8 +15,8 @@ const isNotLoggedIn = (req, res, next) => {
 };
 
 const isFormFilled = (req, res, next) => {
-  const { email, password } = req.body;
-  if (!email || !password) {
+  const { email, password, name } = req.body;
+  if (!email || !password || !name) {
     // erorrFormNotFilled--> es el identificador del mensaje: All fields are required
     req.flash('errorFormNotFilled', 'All fields are required');
     if (email) {

@@ -10,7 +10,7 @@ const houseSchema = new Schema({
     ref: 'User'
   },
   image: {
-    type: String,
+    type: Array,
     required: true
   },
   title: {
