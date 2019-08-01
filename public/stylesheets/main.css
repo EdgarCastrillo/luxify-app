@@ -965,6 +965,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .house-ad .house-info .title-ad p {
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 
