@@ -127,10 +127,10 @@ const main = () => {
       event.preventDefault();
       const house = {
         title: event.srcElement.title.value,
-        area: event.srcElement.location.value,
+        area: event.srcElement.area.value,
         image: imageArray,
         location: event.srcElement.location.value,
-        description: event.srcElement.rooms.value,
+        description: event.srcElement.description.value,
         rooms: event.srcElement.rooms.value,
         bathrooms: event.srcElement.bathrooms.value,
         swimmingPool: event.srcElement.swimmingPool.value,

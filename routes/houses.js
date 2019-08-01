@@ -45,6 +45,7 @@ router.get('/sells/:id', isIdValid, async (req, res, next) => {
   try {
     const id = req.params.id;
     const house = await House.findById(id);
+    console.log(house);
     res.render('house-details', house);
   } catch (error) {
     next(error);

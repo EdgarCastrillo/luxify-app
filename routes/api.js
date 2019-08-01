@@ -21,6 +21,7 @@ router.post('/image-upload', parser.single('image'), async (req, res, next) => {
 });
 
 router.post('/form-sell', parser.single('image'), async (req, res, next) => {
+  console.log(req.body);
   const { title, image, description, area, rooms, bathrooms, garden, swimmingPool, privateBeach, price } = req.body;
   const location = req.body.location.split(',').map(Number);
   try {
