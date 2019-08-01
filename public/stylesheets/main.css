@@ -772,9 +772,9 @@ html {
 }
 
 .intro .logo a img {
-  width: 95%;
+  width: 90%;
   border: 1px solid;
-  padding: 50px 60px 44px 60px;
+  padding: 10% 10% 10% 10%;
 }
 
 .intro .log {
