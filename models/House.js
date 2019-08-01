@@ -48,17 +48,17 @@ const houseSchema = new Schema({
     unique: false
   },
   garden: {
-    type: Boolean,
+    type: String,
     required: true,
     unique: false
   },
   swimmingPool: {
-    type: Boolean,
+    type: String,
     required: true,
     unique: false
   },
   privateBeach: {
-    type: Boolean,
+    type: String,
     required: true,
     unique: false
   },

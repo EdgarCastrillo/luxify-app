@@ -1,81 +1,8 @@
 
-
-// .form {
-//   display: flex;
-//   flex-direction: column;
-// }
-  
-// }
-
-// // input[type=text]:focus {
-// //   background-color: rgb(241, 241, 241);
-// // }
-
-// textarea {
-//   width: 100%;
-//   height: 150px;
-//   padding: 12px 20px;
-//   resize: none;
-//   margin-bottom: 1em;
-//   color: black;
-//   background-color: rgb(255, 255, 255);
-//   border: 1px solid black;
-//   border-radius: 8px;
-// }
-
-// select {
-//   width: 100%;
-//   height: 50px;
-//   border: none;
-//   border-radius: 8px;
-//   background-color: #ffffff;
-//   margin-bottom: 1em;
-//   border: 1px solid black;
-// }
-
-// input, select, textarea {
-// 	display: block;
-// 	box-sizing: border-box;
-// 	width: 100%;
-// 	outline: none;
-// 	border: none;
-// 	border-radius: 0;
-// 	-webkit-appearance: none;
-// 	   -moz-appearance: none;
-// 	        appearance: none;
-// }
-
-// .input-white {
-//   margin-bottom: 1em;
-//   color: white;
-//   background-color: rgba(255, 255, 255, 0);
-//   border: 1px solid white;
-//   border-radius: 8px;
-//   height: 50px;
-//   padding-left: 20px;
-//   text-decoration: none;
-//   font-size: 0.8em;
-//   font-weight: 300; 
-// }
-// .input-black {
-// margin-bottom: 1em;
-// color: black;
-// background-color: rgba(255, 255, 255, 0);
-// border: 1px solid black;
-// border-radius: 8px;
-// height: 50px;
-// padding-left: 20px;
-// text-decoration: none;
-// font-size: 0.8em;
-// font-weight: 300;   
-// }
-
-
-
-.form{
+.sell-form{
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top:20px;
 
   .inp {
     position: relative;
@@ -153,16 +80,6 @@ textarea#description {
   color: #9098a9;
 }
 
-label.img-select {
-  margin-bottom: 25px;
-  font-family: inherit;
-  padding: 12px 0;
-  height: 48px;
-  font-size: 16px;
-  font-weight: 500;
-  color:  #9098a9;
-  border-bottom: 1px solid #c8ccd4;
-}
 
 
 .geocoder-home {
@@ -188,4 +105,33 @@ span.loc {
 
 section.location-section {
   margin-top: 12px;
+}
+
+.img-select {
+  margin-bottom: 8px;
+  input[type="file"] {
+    width: 85px;
+}
+  p {
+    font-size: 1em;
+    color: #8e8e8e;
+}
+}
+
+
+
+.photo-up-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  margin-top:10px;
+  margin-bottom: 20px;
+  .article-img{
+    overflow: hidden;
+    height: 74px;
+    padding: 4px;
+    img {
+      width: 100%;
+      height: 100%;
+  }
+  }
 }

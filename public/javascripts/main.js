@@ -11,7 +11,7 @@ const main = () => {
           container: 'map',
           style: 'mapbox://styles/mapbox/light-v10',
           center: [position.coords.longitude, position.coords.latitude],
-          zoom: 8
+          zoom: 4
         });
 
         var geocoder = new MapboxGeocoder({
@@ -19,11 +19,6 @@ const main = () => {
           mapboxgl: mapboxgl,
           limit: 3
         });
-
-        // map.on('load', () => {
-        //   // const locationInput = document.querySelector('.location');
-        //   // test();
-        // });
 
         // función que devuelve las coordenadas del resultado seleccionado
         geocoder.on('result', (selected) => {
@@ -111,9 +106,13 @@ const main = () => {
       const formData = new FormData();
       formData.append('image', event.target.parentElement.children[1].files[0]);
       const imageUrl = await axios.post('/api/image-upload', formData);
-      const image = document.createElement('img');
+      const image = document.createElement('article');
+      image.classList.add('article-img');
+      // image.classList.backgroundImage = `url(${imageUrl.data})`;
+      image.innerHTML = `<img src="${imageUrl.data}" alt="uploaded photo">`;
       // imageContainer.appendChild(image);
-      image.setAttribute('src', imageUrl.data);
+      // image.setAttribute('src', imageUrl.data);
+
       imageContainer.appendChild(image);
       imageArray.push(imageUrl.data);
       if (imageArray.length === 6) {
@@ -122,24 +121,10 @@ const main = () => {
 
         buttonFile.replaceWith(p);
       }
-      // const image_container = document.querySelector('.photo-up-container');
-
-      // console.log(imageArray);
     });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      // console.log(event.srcElement.title.value);
-
-      // console.log(event.srcElement.area.value);
-      // console.log(event.srcElement.location.value);
-      // console.log(event.srcElement.description.value);
-
-      // console.log(event.srcElement.rooms.value);
-      // console.log(event.srcElement.bathrooms.value);
-      // console.log(event.srcElement.swimmingPool.value);
-      // console.log(event.srcElement.garden.value);
-      // console.log(event.srcElement.privateBeach.value);
-      // console.log(event.srcElement.price.value);
       const house = {
         title: event.srcElement.title.value,
         area: event.srcElement.location.value,
