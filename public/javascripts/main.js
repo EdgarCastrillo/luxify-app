@@ -11,7 +11,7 @@ const main = () => {
           container: 'map',
           style: 'mapbox://styles/mapbox/light-v10',
           center: [position.coords.longitude, position.coords.latitude],
-          zoom: 8
+          zoom: 4
         });
 
         var geocoder = new MapboxGeocoder({
@@ -106,8 +106,13 @@ const main = () => {
       const formData = new FormData();
       formData.append('image', event.target.parentElement.children[1].files[0]);
       const imageUrl = await axios.post('/api/image-upload', formData);
-      const image = document.createElement('img');
-      image.setAttribute('src', imageUrl.data);
+      const image = document.createElement('article');
+      image.classList.add('article-img');
+      // image.classList.backgroundImage = `url(${imageUrl.data})`;
+      image.innerHTML = `<img src="${imageUrl.data}" alt="uploaded photo">`;
+      // imageContainer.appendChild(image);
+      // image.setAttribute('src', imageUrl.data);
+
       imageContainer.appendChild(image);
       imageArray.push(imageUrl.data);
       if (imageArray.length === 6) {
@@ -117,9 +122,9 @@ const main = () => {
         buttonFile.replaceWith(p);
       }
     });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-
       const house = {
         title: event.srcElement.title.value,
         area: event.srcElement.location.value,

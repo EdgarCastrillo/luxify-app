@@ -77,18 +77,30 @@ html {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
+    height: 100vh;
+    justify-content: space-between;
   }
 
   .logo {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 64px;
 
     a {
       display: flex;
       flex-direction: row;
       justify-content: center;
       text-decoration: none;
+      color: white;
+      font-size: 6em;
+      font-weight: 500;
+      text-shadow: 1px 1px #2d2d2d;
+      img {
+        width: 95%;
+        border: 1px solid;
+        padding: 50px 60px 44px 60px;
+    }
     }
   }
   .log {
@@ -327,3 +339,44 @@ button, input[type="submit"], input[type="reset"] {
   }
 
 
+.marker {
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: cover;
+  /* background: black; */
+}
+
+
+
+ .carousel{
+  display: grid;
+  grid-template-columns: repeat(6, 100%);
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+ 
+  article{
+    margin: 0;
+    padding: 0;
+    scroll-snap-align: center;
+    .slides {
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+    }
+  }
+
+
+  a{
+  margin: 0 auto;
+  width: 100%;
+  }
+  img{
+    width: 100%;
+    object-fit: cover;
+    height: 60vh;
+  }
+}

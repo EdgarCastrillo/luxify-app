@@ -1,7 +1,7 @@
 <main class="intro">
   <section class="auth-home">
     <section class="logo">
-      <a href=""><img src="" alt="">Logo Luxify</a>
+      <a href=""><img src="/images/Luxify2.png" alt=""></a>
     </section>
     <section class="login">
       <h2>Log In</h2>
@@ -21,7 +21,11 @@
         </label>  
 
         <button class="btn-white" type="submit">Log in</button>
-        <p class="log">New user?<a href="auth/signup">Join us</a></p>
+        <p class="log">New user?<a href="/auth/signup">Join us</a></p>
+        {{#if messages.length}}
+          <ul class="validation">
+          {{#each messages}}<li style=" display:inline; color:red;font-size: 16px; list-style-type:none;"><strong>{{this}}</strong></li>{{/each}}
+        {{/if}}
       </form>
     </section> 
   </section>

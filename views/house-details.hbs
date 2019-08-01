@@ -1,16 +1,18 @@
 <main class="house-ad">
-  <section class="carrousel">
-    {{#each image}}
-    <article class="carrousel-img">
-      <img src="{{this}}" alt="{{../title}}">
-    </article>
-    {{/each}}
+ 
+  <section class="carousel">
+      {{#each image}}
+      <article class="slides">
+        <img src="{{this}}" alt="{{../title}}">
+      </article>
+      {{/each}}
   </section>
+
   <section class="house-info">  
     <article>
       <section class="title-ad">
         <h2>{{title}}</h2>
-        <p class="sub-p">{{location}}</p>
+        {{!-- <p class="sub-p">{{location}}</p> --}}
         <p>{{description}}</p>
       </section>
       <section class="details-ad">
@@ -22,9 +24,9 @@
             <p>{{bathrooms}} bathrooms</p>
           </section>
           <section class="details-ad-info-2">
-            <p>{{garden}}</p>
-            <p>{{swimmingPool}}</p>
-            <p>{{privateBeach}}</p>
+            <p>Garden: {{garden}}</p>
+            <p>Swimmingpool: {{swimmingPool}}</p>
+            <p>Private Beach: {{privateBeach}}</p>
           </section>
         </section>
       </section>

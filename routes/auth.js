@@ -10,13 +10,19 @@ const saltRounds = 10;
 const router = express.Router();
 
 router.get('/', isLoggedIn, (req, res, next) => {
+  res.redirect('/login');
+});
+
+router.get('/login', isLoggedIn, (req, res, next) => {
   // if (req.session.currentUser) {
   //   res.render('/');
   // } else {
-  res.render('login');
+  const data = {
+    messages: req.flash('errorFormNotFilled') };
+  res.render('login', data);
 });
 
-router.post('/login', isLoggedIn, async (req, res, next) => {
+router.post('/login', isLoggedIn, isFormFilled, async (req, res, next) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });

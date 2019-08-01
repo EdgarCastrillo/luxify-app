@@ -32,6 +32,11 @@ section.location-section {
     font-size: 1em;
     }
   }
+}
+.sell-form{
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
 
   .inp {
     position: relative;
@@ -109,3 +114,58 @@ textarea#description {
   color: #9098a9;
 }
 
+
+
+.geocoder-home {
+  margin: 20px 25px 25px 25px;
+}
+.geocoder-form {
+  margin: 0px 0px 25px 0px;
+}
+
+section.location-section {
+}
+
+section.title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c8ccd4;
+  margin-bottom: 15px;
+}
+
+span.loc {
+  color: #9098a9;
+  font-weight: 500;
+}
+
+section.location-section {
+  margin-top: 12px;
+}
+
+.img-select {
+  margin-bottom: 8px;
+  input[type="file"] {
+    width: 85px;
+}
+  p {
+    font-size: 1em;
+    color: #8e8e8e;
+}
+}
+
+
+
+.photo-up-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  margin-top:10px;
+  margin-bottom: 20px;
+  .article-img{
+    overflow: hidden;
+    height: 74px;
+    padding: 4px;
+    img {
+      width: 100%;
+      height: 100%;
+  }
+  }
+}

@@ -5,6 +5,7 @@ const router = express.Router();
 const User = require('../models/User');
 const House = require('../models/House');
 const parser = require('../config/cloudinary');
+const { isIdValid } = require('../middlewares/authMiddlewares');
 
 router.get('/form-sell', (req, res, next) => {
   if (!req.session.currentUser) {
@@ -40,7 +41,7 @@ router.get('/form-sell', (req, res, next) => {
 //   }
 // });
 
-router.get('/sells/:id', async (req, res, next) => {
+router.get('/sells/:id', isIdValid, async (req, res, next) => {
   try {
     const id = req.params.id;
     const house = await House.findById(id);
@@ -50,7 +51,7 @@ router.get('/sells/:id', async (req, res, next) => {
   }
 });
 
-router.get('/sells/:id/edit', async (req, res, next) => {
+router.get('/sells/:id/edit', isIdValid, async (req, res, next) => {
   if (!req.session.currentUser) {
     res.redirect('/auth');
   } else {
@@ -60,7 +61,7 @@ router.get('/sells/:id/edit', async (req, res, next) => {
   }
 });
 
-router.post('/sells/:id/edit', async (req, res, next) => {
+router.post('/sells/:id/edit', isIdValid, async (req, res, next) => {
   try {
     const id = req.params.id;
     const house = req.body;
@@ -71,7 +72,7 @@ router.post('/sells/:id/edit', async (req, res, next) => {
   }
 });
 
-router.post('/sells/:id/delete', async (req, res, next) => {
+router.post('/sells/:id/delete', isIdValid, async (req, res, next) => {
   try {
     const { id } = req.params;
     await House.findByIdAndDelete(id);
